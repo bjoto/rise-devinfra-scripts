@@ -15,7 +15,8 @@ create_vm() {
 	cmd="hcloud server create --ssh-key bjorn@rivosinc.com \
 		       --name $fullname-$i \
 		       --type $server_type --image $image  \
-	               --user-data-from-file $d/cloud-init.conf"
+	               --user-data-from-file $d/cloud-init.conf \
+		       --datacenter hel1-dc2"
 	echo Running: $cmd
 	if (( ! $dry )); then
 	    $cmd
